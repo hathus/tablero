@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string('inter_dependencias');
             $table->integer('presupuesto_total');
             $table->integer('presupuesto_adicional');
-            $table->integer('anio_aplicado');
-            $table->integer('presupuesto_aplicado');
             $table->string('status_compromiso');
             $table->foreignId('compromiso_id')->constrained()->onDelete('cascade');
             $table->timestamps();
