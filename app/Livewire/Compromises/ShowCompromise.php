@@ -10,4 +10,9 @@ class ShowCompromise extends Component
     {
         return view('livewire.compromises.show-compromise');
     }
+
+    public function cancel()
+    {
+        return redirect()->route('compromisos');
+    }
 }

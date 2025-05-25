@@ -10,4 +10,9 @@ class CreateCompromise extends Component
     {
         return view('livewire.compromises.create-compromise');
     }
+
+    public function cancel()
+    {
+        return redirect()->route('compromisos');
+    }
 }

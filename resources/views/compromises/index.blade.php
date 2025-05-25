@@ -5,7 +5,5 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        
-    </div>
+    <livewire:compromises.list-compromises/>
 </x-app-layout>
