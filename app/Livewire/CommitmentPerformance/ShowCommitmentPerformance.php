@@ -10,4 +10,9 @@ class ShowCommitmentPerformance extends Component
     {
         return view('livewire.commitment-performance.show-commitment-performance');
     }
+
+    public function cancel()
+    {
+        return redirect()->route('cumplimiento');
+    }
 }

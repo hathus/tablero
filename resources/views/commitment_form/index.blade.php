@@ -5,7 +5,5 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        
-    </div>
+    <livewire:commitment-form.list-commitment-form/>
 </x-app-layout>

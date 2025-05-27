@@ -10,4 +10,9 @@ class CreateCommitmentPerformance extends Component
     {
         return view('livewire.commitment-performance.create-commitment-performance');
     }
+
+    public function cancel()
+    {
+        return redirect()->route('cumplimiento');
+    }
 }

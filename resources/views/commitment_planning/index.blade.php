@@ -5,7 +5,5 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        
-    </div>
+    <livewire:commitment-planning.list-commitment-planning/>
 </x-app-layout>

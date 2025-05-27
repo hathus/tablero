@@ -10,4 +10,9 @@ class EditCommitmentPlanning extends Component
     {
         return view('livewire.commitment-planning.edit-commitment-planning');
     }
+
+    public function cancel()
+    {
+        return redirect()->route('planes');
+    }
 }

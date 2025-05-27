@@ -10,4 +10,19 @@ class ListCommitmentForm extends Component
     {
         return view('livewire.commitment-form.list-commitment-form');
     }
+
+    public function create()
+    {
+        return redirect()->route('crear-ficha');
+    }
+
+    public function edit()
+    {
+        return redirect()->route('editar-ficha');
+    }
+
+    public function show()
+    {
+        return redirect()->route('mostrar-ficha');
+    }
 }

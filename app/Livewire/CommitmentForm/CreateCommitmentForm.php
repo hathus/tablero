@@ -10,4 +10,9 @@ class CreateCommitmentForm extends Component
     {
         return view('livewire.commitment-form.create-commitment-form');
     }
+
+    public function cancel()
+    {
+        return redirect()->route('fichas');
+    }
 }

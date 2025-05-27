@@ -10,4 +10,19 @@ class ListCommitmentPerformance extends Component
     {
         return view('livewire.commitment-performance.list-commitment-performance');
     }
+
+    public function create()
+    {
+        return redirect()->route('crear-cumplimiento');
+    }
+
+    public function edit()
+    {
+        return redirect()->route('editar-cumplimiento');
+    }
+
+    public function show()
+    {
+        return redirect()->route('mostrar-cumplimiento');
+    }
 }
