@@ -1,4 +1,4 @@
-<form class="md:w-1/2 space-y-5" wire:submit.prevent="" novalidate>
+<form class="md:w-1/2 space-y-5 print:space-y-1" wire:submit.prevent="" novalidate>
     <div class="mt-4">
         <div class="md:flex md:flex-row md:justify-between md:space-x-3">
             <div class="md:flex-col md:w-1/2 justify-stretch mb-4">
@@ -54,10 +54,10 @@
 
     </div>
 
-    <x-primary-button class="w-full justify-center mt-4 hover:bg-green-500 dark:hover:bg-green-600" onclick="window.print()">
+    <x-primary-button class="w-full justify-center mt-4 hover:bg-green-500 dark:hover:bg-green-600 print:hidden" onclick="window.print()">
         Imprimir
     </x-primary-button>
-    <x-secondary-button class="w-full justify-center mt-4" wire:click='cancel()'>
+    <x-secondary-button class="w-full justify-center mt-4 print:hidden" wire:click='cancel()'>
         Cancelar
     </x-secondary-button>
 </form>

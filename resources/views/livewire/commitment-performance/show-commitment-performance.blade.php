@@ -29,10 +29,10 @@
 
     </div>
 
-    <x-primary-button class="w-full justify-center mt-4 hover:bg-green-500 dark:hover:bg-green-600" onclick="window.print()">
+    <x-primary-button class="w-full justify-center mt-4 hover:bg-green-500 dark:hover:bg-green-600 print:hidden" onclick="window.print()">
         Imprimir
     </x-primary-button>
-    <x-secondary-button class="w-full justify-center mt-4" wire:click='cancel()'>
+    <x-secondary-button class="w-full justify-center mt-4 print:hidden" wire:click='cancel()'>
         Cancelar
     </x-secondary-button>
 </form>

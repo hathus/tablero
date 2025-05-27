@@ -9,10 +9,10 @@
         <x-text-input id="eje_nombre" class="block mt-1 w-full" type="text" wire:model="eje_nombre" wire:model.live="eje_nombre"
             :value="old('eje_nombre')" placeholder="Nombre del Eje" />
     </div>
-    <x-primary-button class="w-full justify-center mt-4 hover:bg-green-500 dark:hover:bg-green-600" onclick="window.print()">
+    <x-primary-button class="w-full justify-center mt-4 hover:bg-green-500 dark:hover:bg-green-600 print:hidden" onclick="window.print()">
         Imprimir
     </x-primary-button>
-    <x-secondary-button class="w-full justify-center mt-4" wire:click='cancel()'>
+    <x-secondary-button class="w-full justify-center mt-4 print:hidden" wire:click='cancel()'>
         Cancelar
     </x-secondary-button>
 </form>
