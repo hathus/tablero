@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StatsController;
 
 Route::view('/', 'welcome');
 
@@ -38,5 +39,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('editar-cumplimiento', 'commitment_performance.edit')->name('editar-cumplimiento');
     Route::view('mostrar-cumplimiento', 'commitment_performance.show')->name('mostrar-cumplimiento');
 });
+// Nueva ruta para estadísticas
+Route::get('/stats', [StatsController::class, 'index'])
+    ->middleware(['auth']) // ✅ Solo usuarios autenticados
+    ->name('stats');
 
 require __DIR__.'/auth.php';
