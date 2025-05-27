@@ -28,7 +28,7 @@ $logout = function (Logout $logout) {
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Tablero de Control') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('compromisos')" :active="request()->routeIs('compromisos')" wire:navigate>
+                    <x-nav-link :href="route('compromisos')" :active="request()->routeIs(['compromisos', 'crear-compromiso'])" wire:navigate>
                         {{ __('Menú de Compromisos') }}
                     </x-nav-link>
                     <x-nav-link :href="route('fichas')" :active="request()->routeIs('fichas')" wire:navigate>
