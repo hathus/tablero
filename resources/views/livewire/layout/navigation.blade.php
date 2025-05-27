@@ -10,7 +10,7 @@ $logout = function (Logout $logout) {
 
 ?>
 
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 print:hidden">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -18,15 +18,29 @@ $logout = function (Logout $logout) {
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" wire:navigate>
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /> --}}
+                        <img src="/img/escudo.png" alt="{{$_ENV['APP_NAME']}}" width="60px" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                        {{ __('Dashboard') }}
+                        {{ __('Tablero de Control') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('compromisos')" :active="request()->routeIs(['compromisos', 'crear-compromiso'])" wire:navigate>
+                        {{ __('Menú de Compromisos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('fichas')" :active="request()->routeIs('fichas')" wire:navigate>
+                        {{ __('Menú Fichas de Compromisos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('planes')" :active="request()->routeIs('planes')" wire:navigate>
+                        {{ __('Menú Planeación de Compromisos') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('cumplimiento')" :active="request()->routeIs('cumplimiento')" wire:navigate>
+                        {{ __('Menú Cumplimiento de Compromisos') }}
+                    </x-nav-link>
+                    
                 </div>
             </div>
 
@@ -76,7 +90,19 @@ $logout = function (Logout $logout) {
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
-                {{ __('Dashboard') }}
+                {{ __('Tablero de Control') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('compromisos')" :active="request()->routeIs('compromisos')" wire:navigate>
+                {{ __('Menú de Compromisos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('fichas')" :active="request()->routeIs('fichas')" wire:navigate>
+                {{ __('Menú Fichas de Compromisos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('planes')" :active="request()->routeIs('planes')" wire:navigate>
+                {{ __('Menú Planeación de Compromisos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('cumplimiento')" :active="request()->routeIs('cumplimiento')" wire:navigate>
+                {{ __('Menú Cumplimiento de Compromisos') }}
             </x-responsive-nav-link>
         </div>
 
