@@ -19,7 +19,7 @@ $logout = function (Logout $logout) {
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}" wire:navigate>
                         {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /> --}}
-                        <img src="/img/escudo.png" alt="{{$_ENV['APP_NAME']}}" width="60px" />
+                        <img src="/img/logo.png" alt="{{$_ENV['APP_NAME']}}" width="160px" />
                     </a>
                 </div>
 

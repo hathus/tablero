@@ -1,4 +1,4 @@
-<form class="md:w-1/2 space-y-5" wire:submit.prevent="" novalidate>
+<form class="md:w-1/2 space-y-5 x-cloak" wire:submit.prevent="" novalidate>
     <div class="mt-4">
         <x-input-label class="uppercase" for="eje_numero" :value="__('Eje Número')" />
         <x-text-input id="eje_numero" class="block mt-1 w-full" type="text" wire:model="eje_numero" wire:model.live="eje_numero"
