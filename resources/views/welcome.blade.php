@@ -20,7 +20,8 @@
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
             <div class="absolute grid grid-cols-1 content-center h-screen w-full">
                 <div class="flex items-center justify-center">
-                    <img id="tlx_logo" src="/img/escudo_01.png" alt="{{$_ENV['APP_NAME']}}" class="hidden absolute w-full h-full inset-0 object-fill object-top p-7"/>
+                    <img id="tlx_city" src="/img/ciudad.jpg" alt="{{$_ENV['APP_NAME']}}" class="hidden absolute w-full h-full inset-0 object-fill object-top"/>
+                    <img id="tlx_logo" src="/img/escudo_02.png" alt="{{$_ENV['APP_NAME']}}" class="hidden absolute w-full h-full inset-0 object-fill object-top p-7"/>
                     <video id="opening" autoplay muted preload="auto" onended="onEnd()" class="absolute w-full h-full inset-0 object-cover object-top">
                         <source src="video/video_02.mp4" type="video/mp4">
                             Su navegador no soporta esta función.
@@ -31,7 +32,7 @@
             {{-- <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white z-10"> --}}
             <div class="relative flex flex-col items-center justify-between min-h-screen selection:text-white">
                     <header class="grid items-center justify-between w-full grid-cols-2 gap-2 p-5 py-8 lg:grid-cols-3 bg-[#3d2675] bg-opacity-80">
-                        <div class="flex text-gray-700 font-bold lg:justify-center lg:col-start-2">
+                        <div class="flex text-gray-200 font-bold lg:justify-center lg:col-start-2">
                             <a href="/" class="flex items-center flex-col md:flex-row">
                                 <img src="/img/logo.png" alt="{{ $_ENV['APP_NAME'] }}" width="200px">
                                 {{-- <p class="bold md:text-2xl"></p> --}}
@@ -54,10 +55,12 @@
                     <script>
                         this.video = document.getElementById("opening");
                         this.img = document.getElementById("tlx_logo");
+                        this.img1 = document.getElementById("tlx_city");
 
                         function onEnd() {
                             this.video.classList.add('hidden');
                             this.img.classList.remove('hidden');  
+                            this.img1.classList.remove('hidden');  
                         }
                     </script> 
             </div>
