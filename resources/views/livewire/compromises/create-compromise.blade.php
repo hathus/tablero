@@ -1,18 +1,24 @@
-<form class="md:w-1/2 space-y-5 x-cloak" wire:submit.prevent="" novalidate>
+<form class="md:w-1/2 space-y-5 x-cloak" wire:submit="save" novalidate>
     <div class="mt-4">
         <x-input-label class="uppercase" for="eje_numero" :value="__('Eje Número')" />
-        <x-text-input id="eje_numero" class="block mt-1 w-full" type="text" wire:model="eje_numero" wire:model.live="eje_numero"
-            :value="old('eje_numero')" placeholder="Número del Eje" />
+        <x-text-input id="eje_numero" class="block mt-1 w-full" type="number" step="1" min="1" wire:model="eje_numero"
+            wire:model.live="eje_numero" :value="old('eje_numero')" placeholder="Número del Eje" />
+        @error('eje_numero')
+        <span class="error">{{ $message }}</span>
+        @enderror
     </div>
     <div class="mt-4">
         <x-input-label class="uppercase" for="eje_nombre" :value="__('Eje Nombre')" />
-        <x-text-input id="eje_nombre" class="block mt-1 w-full" type="text" wire:model="eje_nombre" wire:model.live="eje_nombre"
-            :value="old('eje_nombre')" placeholder="Nombre del Eje" />
+        <x-text-input id="eje_nombre" class="block mt-1 w-full" type="text" wire:model="eje_nombre"
+            wire:model.live="eje_nombre" :value="old('eje_nombre')" placeholder="Nombre del Eje" />
+        @error('eje_nombre')
+        <span class="error">{{ $message }}</span>
+        @enderror
     </div>
     <x-primary-button class="w-full justify-center mt-4 hover:bg-green-500 dark:hover:bg-green-600">
         Crear
     </x-primary-button>
-    <x-secondary-button class="w-full justify-center mt-4" wire:click='cancel()'>
+    <x-secondary-href href="{{ route('compromisos') }}" class="w-full justify-center mt-4" wire:navigate>
         Cancelar
-    </x-secondary-button>
+    </x-secondary-href>
 </form>
