@@ -4,13 +4,11 @@
             wire:poll.5000ms>
             @forelse ($compromisos as $compromiso)
             <div
-                class="p-6 text-gray-900 dark:text-slate-200 md:flex md:justify-between md:items-center border border-[#7baa3f]">
-                {{-- <div class="rounded-lg flex flex-row justify-between">
-                </div> --}}
+                class="p-6 text-gray-900 dark:text-slate-200 md:flex md:justify-around md:items-center border border-[#7baa3f]">
                 <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
-                    <p class="py-2 px-2 w-1/12 flex items-center uppercase text-sm font-bold text-center">eje {{
+                    <p class="py-2 px-4 w-1/5 flex justify-around items-center uppercase text-sm font-bold text-center">eje {{
                         $compromiso->eje_numero }}</p>
-                    <p class="py-2 px-2 w-1/12 flex items-center uppercase text-sm font-bold text-center">{{
+                    <p class="py-2 px-4 w-1/5 flex justify-around items-center uppercase text-sm font-bold text-center">{{
                         $compromiso->eje_nombre }}</p>
                     <a href=""
                         class="py-2 px-4 rounded border border-amber-700 dark:text-slate-200 hover:bg-amber-700  text-xs font-bold uppercase flex items-center justify-center hover:text-white w-1/4 text-center">

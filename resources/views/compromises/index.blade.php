@@ -9,5 +9,6 @@
             </div>
         </div>
     </x-slot>
+
     <livewire:compromises.show-compromise />
 </x-app-layout>

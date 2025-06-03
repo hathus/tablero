@@ -1,4 +1,14 @@
 <form class="md:w-1/2 space-y-5 x-cloak" wire:submit="save" novalidate>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 alert">
+        @if (session()->has('message'))
+        <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show">
+            <div id="alert" class="uppercase border border-green-600 bg-green-100 text-green-600 font-bold
+                                    p-2 my-3 text-center">
+                {{ session('message') }}
+            </div>
+        </div>
+        @endif
+    </div>
     <div class="mt-4">
         <x-input-label class="uppercase" for="eje_numero" :value="__('Eje Número')" />
         <x-text-input id="eje_numero" class="block mt-1 w-full" type="number" step="1" min="1" wire:model="eje_numero"

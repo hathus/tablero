@@ -30,8 +30,13 @@ class CreateCompromise extends Component
     {
         $compromise = $this->validate();
 
-        Compromise::create($compromise);
+        $doneRecord = Compromise::create($compromise);
 
-        $this->reset();
+        if($doneRecord) {
+            session()->flash('message', 'El Eje se creó correctamente');
+            $this->reset();
+        } else {
+            session()->flash('message', 'Ha ocurrido un error inesperado, intentelo más tarde');
+        }
     }
 }
