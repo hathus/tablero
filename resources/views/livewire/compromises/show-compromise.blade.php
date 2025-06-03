@@ -12,7 +12,7 @@
                     <p class="py-2 px-4 w-1/5 flex justify-around items-center uppercase text-sm font-bold text-center">
                         {{
                         $compromiso->eje_nombre }}</p>
-                    <a href=""
+                    <a href="{{route('fichas')}}"
                         class="py-2 px-4 rounded border border-amber-700 dark:text-slate-200 hover:bg-amber-700  text-xs font-bold uppercase flex items-center justify-center hover:text-white w-1/4 text-center">
                         Fichas de Compromisos
                     </a>
