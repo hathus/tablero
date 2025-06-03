@@ -31,7 +31,7 @@ $logout = function (Logout $logout) {
                     <x-nav-link :href="route('compromisos')" :active="request()->routeIs(['compromisos', 'crear-compromiso'])" wire:navigate>
                         {{ __('Menú de Compromisos') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('fichas')" :active="request()->routeIs('fichas')" wire:navigate>
+                    {{-- <x-nav-link :href="route('fichas')" :active="request()->routeIs('fichas')" wire:navigate>
                         {{ __('Menú Fichas de Compromisos') }}
                     </x-nav-link>
                     <x-nav-link :href="route('planes')" :active="request()->routeIs('planes')" wire:navigate>
@@ -39,7 +39,7 @@ $logout = function (Logout $logout) {
                     </x-nav-link>
                     <x-nav-link :href="route('cumplimiento')" :active="request()->routeIs('cumplimiento')" wire:navigate>
                         {{ __('Menú Cumplimiento de Compromisos') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
                     
                 </div>
             </div>
@@ -95,7 +95,7 @@ $logout = function (Logout $logout) {
             <x-responsive-nav-link :href="route('compromisos')" :active="request()->routeIs('compromisos')" wire:navigate>
                 {{ __('Menú de Compromisos') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('fichas')" :active="request()->routeIs('fichas')" wire:navigate>
+            {{-- <x-responsive-nav-link :href="route('fichas')" :active="request()->routeIs('fichas')" wire:navigate>
                 {{ __('Menú Fichas de Compromisos') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('planes')" :active="request()->routeIs('planes')" wire:navigate>
@@ -103,7 +103,7 @@ $logout = function (Logout $logout) {
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('cumplimiento')" :active="request()->routeIs('cumplimiento')" wire:navigate>
                 {{ __('Menú Cumplimiento de Compromisos') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
         </div>
 
         <!-- Responsive Settings Options -->

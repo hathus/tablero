@@ -6,9 +6,11 @@
             <div
                 class="p-6 text-gray-900 dark:text-slate-200 md:flex md:justify-around md:items-center border border-[#7baa3f]">
                 <div class="flex flex-col md:flex-row items-stretch gap-3 mt-5 md:mt-0">
-                    <p class="py-2 px-4 w-1/5 flex justify-around items-center uppercase text-sm font-bold text-center">eje {{
+                    <p class="py-2 px-4 w-1/5 flex justify-around items-center uppercase text-sm font-bold text-center">
+                        eje {{
                         $compromiso->eje_numero }}</p>
-                    <p class="py-2 px-4 w-1/5 flex justify-around items-center uppercase text-sm font-bold text-center">{{
+                    <p class="py-2 px-4 w-1/5 flex justify-around items-center uppercase text-sm font-bold text-center">
+                        {{
                         $compromiso->eje_nombre }}</p>
                     <a href=""
                         class="py-2 px-4 rounded border border-amber-700 dark:text-slate-200 hover:bg-amber-700  text-xs font-bold uppercase flex items-center justify-center hover:text-white w-1/4 text-center">
@@ -23,7 +25,7 @@
                         Cumplimiento de Compromisos
                     </a>
 
-                    <a href=""
+                    <a href="{{ route('editar-compromiso', $compromiso->id) }}"
                         class="border border-blue-700 py-2 px-4 rounded dark:text-slate-100 hover:bg-blue-700 text-xs font-bold uppercase text-center flex items-center justify-center hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6 mx-1">
@@ -34,7 +36,7 @@
                     </a>
                     <button
                         class="border border-red-700 py-2 px-4 rounded dark:text-slate-100 hover:bg-red-700 text-xs font-bold uppercase text-center flex items-center justify-center hover:text-white"
-                        wire:click="">
+                        wire:click="$dispatch('deleteAlertCompromiseRecord', {{ $compromiso->id }})">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6 mx-1">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -50,3 +52,33 @@
         </div>
         </divclass=>
     </div>
+
+    @push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        Livewire.on('deleteAlertCompromiseRecord', compromisoId => {
+                Swal.fire({
+                    title: "¿Esta seguro de eliminar este compromiso?",
+                    text: "Esta acción no podrá revertirse!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Sí, eliminarlo!",
+                    cancelButtonText: "Cancelar",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.dispatch('deleteCompromiseRecord', {
+                            id: compromisoId
+                        });
+                        Swal.fire({
+                            title: "Compromiso Eliminado!",
+                            text: "El compromiso ha sido eliminado.",
+                            icon: "success"
+                        });
+                    }
+                });
+            });
+    </script>
+    @endpush
