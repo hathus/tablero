@@ -44,7 +44,9 @@ class CompromiseController extends Controller
      */
     public function edit(Compromise $compromise)
     {
-        //
+        return view('compromises.edit', [
+            'compromise' => $compromise,
+        ]);
     }
 
     /**

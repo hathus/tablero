@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StatsController;
+use App\Http\Controllers\CompromiseController;
 
 Route::view('/', 'welcome');
 
@@ -16,10 +17,11 @@ Route::view('profile', 'profile')
 // Grupo de vistas con permisos
 Route::middleware(['auth', 'verified'])->group(function () {
     // Rutas compromisos
-    Route::view('compromisos', 'compromises.index')->name('compromisos');
+    Route::view('compromises', 'compromises.index')->name('compromisos');
     Route::view('crear-compromiso', 'compromises.create')->name('crear-compromiso');
-    Route::view('editar-compromiso', 'compromises.edit')->name('editar-compromiso');
-    Route::view('mostrar-compromiso', 'compromises.show')->name('mostrar-compromiso');
+    Route::get('/compromises/{compromise}/edit', [CompromiseController::class, 'edit'])->name('editar-compromiso');
+    //Route::view('editar-compromiso', 'compromises.edit')->name('editar-compromiso');
+    //Route::view('mostrar-compromiso', 'compromises.show')->name('mostrar-compromiso');
 
     // Rutas ficha de compromisos
     Route::view('fichas', 'commitment_form.index')->name('fichas');
