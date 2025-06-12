@@ -44,10 +44,6 @@
             <div class="p-4 mb-6 bg-green-100 text-green-800 font-bold rounded max-w-7xl mx-auto">
                 Este usuario es <span class="underline">admin</span> ✅
             </div>
-        @else
-            <div class="p-4 mb-6 bg-red-100 text-red-800 font-bold rounded max-w-7xl mx-auto">
-                No eres admin ❌
-            </div>
         @endrole
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex min-h-[400px]">
