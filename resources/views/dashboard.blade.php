@@ -38,9 +38,21 @@
             'Gobierno'
         ]
     }">
+
+        
+        @role('admin')
+            <div class="p-4 mb-6 bg-green-100 text-green-800 font-bold rounded max-w-7xl mx-auto">
+                Este usuario es <span class="underline">admin</span> ✅
+            </div>
+        @else
+            <div class="p-4 mb-6 bg-red-100 text-red-800 font-bold rounded max-w-7xl mx-auto">
+                No eres admin ❌
+            </div>
+        @endrole
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 flex min-h-[400px]">
 
-            <!-- Botones laterales -->
+            
             <div class="w-1/4 text-white p-4 space-y-2">
                 <template x-for="(name, index) in tabs" :key="index">
                     <button @click="activeTab = index + 1"
@@ -58,15 +70,14 @@
                     </button>
                 </template>
 
-                <!-- 🔽 Botón adicional: Gráficas -->
+                
                 <button @click="window.location.href = '/stats'"
                     class="block w-full text-left px-4 py-3 mt-4 rounded-xl font-semibold transition-all duration-300 transform bg-gradient-to-r from-yellow-500 to-yellow-300 hover:scale-105 text-black shadow-md ring-2 ring-yellow-400 ring-offset-2">
                     📊 Gráficas
                 </button>
             </div>
 
-
-            <!-- Contenido dinámico -->
+            
             <div class="w-3/4 p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-auto">
                 <template x-for="(name, index) in tabs" :key="'tab-' + index">
                     <template x-if="activeTab === index + 1">
@@ -80,7 +91,7 @@
                             }
                         }" x-init="setTimeout(() => showButtons = true, 50)">
 
-                            <!-- Mostrar contenido del botón si se seleccionó -->
+                            
                             <template x-if="selectedButton">
                                 <div>
                                     <button @click="returnToButtons()"
@@ -95,7 +106,7 @@
                                 </div>
                             </template>
 
-                            <!-- Mostrar botones si no se ha seleccionado ninguno -->
+                            
                             <template x-if="!selectedButton">
                                 <div class="grid grid-cols-4 gap-3">
                                     <template x-for="i in 20" :key="i">
@@ -114,8 +125,9 @@
                                                 4: 'bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:ring-2 hover:ring-orange-400 hover:ring-offset-2 hover:ring-offset-current',
                                                 5: 'bg-white hover:bg-gray-100 hover:shadow-lg hover:ring-2 hover:ring-gray-400 hover:ring-offset-2 hover:ring-offset-current text-black dark:text-black',
                                                 6: 'bg-green-500 hover:bg-green-600 hover:shadow-lg hover:ring-2 hover:ring-green-400 hover:ring-offset-2 hover:ring-offset-current',
-                                                7: 'bg-purple-500 hover:bg-purple-600 hover:shadow-lg hover:ring-2 hover:ring-purple-400 hover:ring-offset-2 hover:ring-offset-current'
-                                            }[index] || 'bg-gray-500'" x-text="name + ' ' + i">
+                                                7: 'bg-purple-500 hover:bg-purple-600 hover:shadow-lg hover:ring-2 hover:ring-purple-400 hover:ring-offset-2 hover:ring-offset-current',
+                                            }[(i - 1) % 8]"
+                                            x-text="name + ' ' + i">
                                         </button>
                                     </template>
                                 </div>
@@ -125,9 +137,8 @@
                     </template>
                 </template>
             </div>
-            <div class="py-12">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-                </div>
-            </div>
+        </div>
+    </div>
+
 </x-app-layout>
