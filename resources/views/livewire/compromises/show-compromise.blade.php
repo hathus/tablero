@@ -47,7 +47,7 @@
                 </div>
             </div>
             @empty
-            <span>No hay registros</span>
+            <span class="text-white">No hay registros</span>
             @endforelse
         </div>
         </divclass=>
